@@ -1,0 +1,25 @@
+{% if selected_menu %}
+    {% if selected_menu.parent_instance %}
+        <h4>Родительский элементы</h4>
+        <div>
+            {% include 'extra/parnet_tag.html' with parent=selected_menu.parent_instance %}
+        </div>
+    {% endif %}
+    <h4>Меню: {{ selected_menu.title }}</h4>
+    <ul>
+        {% for child in childes %}
+            <li>
+                <a href="{% url 'menu' child.slug %}">{{ child.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <h4>Все</h4>
+    <ul>
+        {% for child in menu_list %}
+            <li>
+                <a href="{% url 'menu' child.slug %}">{{ child.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

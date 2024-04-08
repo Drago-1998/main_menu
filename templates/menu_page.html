@@ -1,0 +1,12 @@
+{% load menu_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+<a href="{% url 'home' %}">Home</a>
+    {% draw_menu menu_name %}
+</body>
+</html>

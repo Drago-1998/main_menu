@@ -1,0 +1,2 @@
+{% if parent.parent_instance %}{% include 'extra/_parent_tag.html' with parent=parent.parent_instance %}{% endif %}
+>>> <a href="{% url 'menu' parent.slug %}">{{ parent.title }}</a>
